@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+  background-color: #282c34;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App > *{
+  margin: 0 10vw;
+}
+
+text {
+  color: whitesmoke;
+}
+
+.Header-section {
+  padding: 2vw;
+  background-color: green;
+}
+
+.Main-content {
+  background-color: yellowgreen;
+  flex: 1;
+}
+
+.Bottom-bar {
+  padding: 2vw;
+  background-color: purple;
+}
+
+.Main-content-nav-bar {
+  display: flex;
+  background-color: blue;
+}
+
+.Main-content-nav-bar > * {
+  display: flex;
+  background-color: blue;
+}
+
+.Main-content-nav-bar-name > * {
+  margin: 1vw;
+}
+
+.Main-content-nav-bar-page > * {
+  margin: 1vw;
+}
+
+.Main-content-nav-bar-spacing {
+  flex: 1;
+}
+
+
