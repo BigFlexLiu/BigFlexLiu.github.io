@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.29fade2c.css",
-    "main.js": "/react-gh-pages/static/js/main.0ef4dee6.js",
-    "static/js/787.c0841a6b.chunk.js": "/react-gh-pages/static/js/787.c0841a6b.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.29fade2c.css.map": "/react-gh-pages/static/css/main.29fade2c.css.map",
-    "main.0ef4dee6.js.map": "/react-gh-pages/static/js/main.0ef4dee6.js.map",
-    "787.c0841a6b.chunk.js.map": "/react-gh-pages/static/js/787.c0841a6b.chunk.js.map"
+    "main.css": "/BigFlexLiu.github.io/static/css/main.29fade2c.css",
+    "main.js": "/BigFlexLiu.github.io/static/js/main.44a5ac0f.js",
+    "static/js/787.c0841a6b.chunk.js": "/BigFlexLiu.github.io/static/js/787.c0841a6b.chunk.js",
+    "index.html": "/BigFlexLiu.github.io/index.html",
+    "main.29fade2c.css.map": "/BigFlexLiu.github.io/static/css/main.29fade2c.css.map",
+    "main.44a5ac0f.js.map": "/BigFlexLiu.github.io/static/js/main.44a5ac0f.js.map",
+    "787.c0841a6b.chunk.js.map": "/BigFlexLiu.github.io/static/js/787.c0841a6b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29fade2c.css",
-    "static/js/main.0ef4dee6.js"
+    "static/js/main.44a5ac0f.js"
   ]
 }
