@@ -1,22 +1,21 @@
+import { Typography } from "@mui/material";
 import React from "react";
 import "./App.css";
+import HorizontalScroll from "./components/horizontal_scroll_view";
 
 function App() {
+  const name = "Felix Liu (Yujun Liu)";
+  const email = "Felixliu135@gmail.com";
+  const phoneNumber = "(905) 805-5437";
   return (
     <div className="App">
-      <div className="Header-section">
-        <text>gmail/phone number</text>
+      <div className="header" style={{ display: "flex", justifyContent: "space-around" }}>
+        <Typography className="contact">{name}</Typography>
+        <Typography className="contact">{email}</Typography>
+        <Typography className="contact">{phoneNumber}</Typography>
       </div>
       <div className="Main-content">
-        <div className="Main-content-nav-bar">
-          <div className="Main-content-nav-bar-name"><text>Section name</text></div>
-          <div className="Main-content-nav-bar-spacing"></div>
-          <div className="Main-content-nav-bar-page">
-            <text>Button left</text>
-            <text>Page number</text>
-            <text>Button right</text>
-          </div>
-        </div>
+        <HorizontalScroll></HorizontalScroll>
       </div>
       <div className="Bottom-bar">
         <text>Hello there</text>
