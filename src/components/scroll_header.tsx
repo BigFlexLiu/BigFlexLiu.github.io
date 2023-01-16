@@ -16,7 +16,7 @@ const ScrollHeader = ({headerNames} : {headerNames: string[]}) => {
         justifyContent: "space-between",
       }}
     >
-      <Typography style={{ whiteSpace: "nowrap", marginLeft: "1em" }}>
+      <Typography style={{ whiteSpace: "nowrap", marginLeft: "1em", fontSize: "3em", color: "white" }} >
         {headerNames[currentPage]}
       </Typography>
       <Arrows currentPage={currentPage} setCurrentPage={setCurrentPage}></Arrows>

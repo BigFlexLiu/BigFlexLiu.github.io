@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import ScrollHeader from "./scroll_header";
@@ -11,10 +12,12 @@ const HorizontalScroll = () => {
     container.style.height = "auto";
   }, []);
 
+  const headers = ["About Me", "My Experience", "My Projects"]
+
   return (
     <ScrollMenu
       Header={
-        <ScrollHeader headerNames={["Hello", "World", "Is"]}></ScrollHeader>
+        <ScrollHeader headerNames={headers}></ScrollHeader>
       }
       scrollContainerClassName="scroll-container"
     >
@@ -28,7 +31,7 @@ const HorizontalScroll = () => {
 const FakeView = (props: any) => {
   return (
     <div className="Horizontal-scroll-content">
-      <text>{props.value}</text>
+      <Typography>{props.value}</Typography>
     </div>
   );
 };

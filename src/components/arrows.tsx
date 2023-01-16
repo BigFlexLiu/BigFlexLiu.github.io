@@ -20,6 +20,7 @@ function Arrow({
       disabled={disabled}
       onClick={onClick}
       style={{
+        color: "white",
         cursor: "pointer",
         display: "flex",
         backgroundColor: "transparent",
@@ -58,7 +59,7 @@ export function LeftArrow({ changePage }: { changePage: VoidFunction }) {
         changePage();
       }}
     >
-      <FontAwesomeIcon icon={faArrowLeft} size="2x" />
+      <FontAwesomeIcon icon={faArrowLeft} size="4x" />
     </Arrow>
   );
 }
@@ -85,7 +86,7 @@ export function RightArrow({ changePage }: { changePage: VoidFunction }) {
         changePage();
       }}
     >
-      <FontAwesomeIcon icon={faArrowRight} size="2x" />
+      <FontAwesomeIcon icon={faArrowRight} size="4x" />
     </Arrow>
   );
 }
@@ -114,7 +115,7 @@ const Arrows = ({
         style={{ marginRight: "1em", display: "flex", alignItems: "center" }}
       >
         <LeftArrow changePage={() => setCurrentPage(currentPage - 1)} />
-        <Typography className="header-content">
+        <Typography className="header-content" fontSize="1.5em">
           {currentPage + 1} / {totalpages}{" "}
         </Typography>
         <RightArrow changePage={() => setCurrentPage(currentPage + 1)} />
