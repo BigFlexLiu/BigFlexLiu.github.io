@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.eba2aef9.css",
-    "main.js": "/static/js/main.44b99bfc.js",
+    "main.js": "/static/js/main.da4ab94c.js",
     "static/js/787.c0841a6b.chunk.js": "/static/js/787.c0841a6b.chunk.js",
     "static/media/game.jpg": "/static/media/game.62efaf3873eacd99c612.jpg",
     "static/media/remixes_view.png": "/static/media/remixes_view.9ce8a8ee9aebf431794f.png",
     "static/media/fat_goose.jpeg": "/static/media/fat_goose.d89d80b75b017bb4c800.jpeg",
     "index.html": "/index.html",
     "main.eba2aef9.css.map": "/static/css/main.eba2aef9.css.map",
-    "main.44b99bfc.js.map": "/static/js/main.44b99bfc.js.map",
+    "main.da4ab94c.js.map": "/static/js/main.da4ab94c.js.map",
     "787.c0841a6b.chunk.js.map": "/static/js/787.c0841a6b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eba2aef9.css",
-    "static/js/main.44b99bfc.js"
+    "static/js/main.da4ab94c.js"
   ]
 }
