@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { VisibilityContext } from "react-horizontal-scrolling-menu";
+import { useState } from "react";
 import Arrows from "./arrows";
 
 const ScrollHeader = ({headerNames} : {headerNames: string[]}) => {

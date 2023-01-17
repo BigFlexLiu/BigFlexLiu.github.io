@@ -1,0 +1,126 @@
+import { Button, Typography } from "@mui/material";
+import { AiFillGithub } from "react-icons/ai";
+import { FaGooglePlay } from "react-icons/fa";
+
+const Projects = () => {
+  const wordleWithFriendsDescription = `Wordle With Friends is a simple wordle game built with react. In addition to generating random five-letter words for the player to guess. There is also options for the number of guesses allowed and even allows user to generate a wordle game with the name of their choosing. Send it to a friend, share the joy.`;
+  const asmrRemixerDescription = `ASMR Remixer is an app built using Flutter/Dart. It contains a few dozen of sounds which can be used to construct remixes. Remixes play sounds in random order. The overlay mode even plays sounds at random interval following exponential distribution. There are also light and dark mode to maximize visual comfort of the users.`;
+
+  return (
+    <div className="page" style={{ display: "flex", marginBottom: "10vw" }}>
+      <div
+        style={{
+          width: "40vw",
+          borderRight: "1px solid white",
+          display: "flex",
+          padding: "2vw",
+        }}
+      >
+        <figure>
+          <img
+            src={require("../../assets/wordle_with_friends/game.jpg")}
+            alt="A Wordle game"
+            style={{ width: "100%", maxHeight: "auto", float: "left" }}
+          ></img>
+          <figcaption style={{ color: "white" }}>
+            Wordle With Friends
+          </figcaption>
+        </figure>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            style={{
+              whiteSpace: "pre-wrap",
+              textAlign: "left",
+              overflow: "hidden",
+              wordWrap: "break-word",
+            }}
+          >
+            {wordleWithFriendsDescription}
+          </Typography>
+          <Button
+            variant="outlined"
+            href="https://github.com/BigFlexLiu/wordle_with_friends"
+            target="_blank"
+            style={{
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Typography style={{ bottom: "0", fontSize: "1.5em" }}>
+              Visit github page &nbsp;{" "}
+              <AiFillGithub style={{ verticalAlign: "text-top" }} />
+            </Typography>
+          </Button>
+        </div>
+      </div>
+      <div
+        style={{
+          width: "40vw",
+          display: "flex",
+          padding: "2vw",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            style={{
+              whiteSpace: "pre-wrap",
+              textAlign: "left",
+              overflow: "hidden",
+              wordWrap: "break-word",
+            }}
+          >
+            {asmrRemixerDescription}
+          </Typography>
+          <Button
+            href="https://play.google.com/store/apps/details?id=com.cfast.asmrremixer.app&hl=en-US&ah=o4bJdzUYyMdth2WBmC6uwiV4oKc"
+            variant="outlined"
+            target="_blank"
+            style={{
+              color: "white",
+            }}
+          >
+            <Typography style={{ bottom: "0", fontSize: "1.5em"}}>
+              Visit Google Play&nbsp; <FaGooglePlay style={{verticalAlign: "text-top" }}/> 
+            </Typography>
+          </Button>
+          <Button
+            href="https://github.com/BigFlexLiu/ASMR-remixer"
+            variant="outlined"
+            target="_blank"
+            style={{
+              color: "white",
+            }}
+          >
+            <Typography style={{ bottom: "0", fontSize: "1.5em"}}>
+              Visit github page&nbsp; <AiFillGithub style={{verticalAlign: "text-top" }}/> 
+            </Typography>
+          </Button>
+        </div>
+
+        <figure>
+          <img
+            src={require("../../assets/asmr_remixer/remixes_view.png")}
+            alt="A Wordle game"
+            style={{ width: "100%", maxHeight: "auto", float: "left" }}
+          ></img>
+          <figcaption style={{ color: "white" }}>ASMR Remixer</figcaption>
+        </figure>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

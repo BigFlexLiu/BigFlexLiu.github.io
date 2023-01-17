@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
