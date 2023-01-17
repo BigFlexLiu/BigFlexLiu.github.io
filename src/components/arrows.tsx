@@ -37,7 +37,7 @@ function Arrow({
   );
 }
 
-export function LeftArrow({ changePage }: { changePage: VoidFunction }) {
+export function LeftArrow() {
   const { isFirstItemVisible, scrollPrev, visibleElements, initComplete } =
     React.useContext(VisibilityContext);
 
@@ -52,19 +52,13 @@ export function LeftArrow({ changePage }: { changePage: VoidFunction }) {
   }, [isFirstItemVisible, visibleElements]);
 
   return (
-    <Arrow
-      disabled={disabled}
-      onClick={() => {
-        scrollPrev();
-        changePage();
-      }}
-    >
+    <Arrow disabled={disabled} onClick={() => scrollPrev()}>
       <FontAwesomeIcon icon={faArrowLeft} size="4x" />
     </Arrow>
   );
 }
 
-export function RightArrow({ changePage }: { changePage: VoidFunction }) {
+export function RightArrow() {
   const { isLastItemVisible, scrollNext, visibleElements } =
     React.useContext(VisibilityContext);
 
@@ -79,13 +73,7 @@ export function RightArrow({ changePage }: { changePage: VoidFunction }) {
   }, [isLastItemVisible, visibleElements]);
 
   return (
-    <Arrow
-      disabled={disabled}
-      onClick={() => {
-        scrollNext();
-        changePage();
-      }}
-    >
+    <Arrow disabled={disabled} onClick={() => scrollNext()}>
       <FontAwesomeIcon icon={faArrowRight} size="4x" />
     </Arrow>
   );
@@ -103,6 +91,15 @@ const Arrows = ({
   // Items have separators in between so only even indices contain real item
   const totalpages = Math.ceil(items.size / 2);
 
+  const { visibleElements } = React.useContext(VisibilityContext);
+
+  React.useEffect(() => {
+    // NOTE: detect if whole component visible
+    if (visibleElements.length) {
+      setCurrentPage(Number(visibleElements[0].slice(1)));
+    }
+  }, [visibleElements]);
+
   return (
     <div
       style={{
@@ -114,11 +111,11 @@ const Arrows = ({
       <div
         style={{ marginRight: "1em", display: "flex", alignItems: "center" }}
       >
-        <LeftArrow changePage={() => setCurrentPage(currentPage - 1)} />
+        <LeftArrow />
         <Typography className="header-content" fontSize="1.5em">
           {currentPage + 1} / {totalpages}{" "}
         </Typography>
-        <RightArrow changePage={() => setCurrentPage(currentPage + 1)} />
+        <RightArrow />
       </div>
     </div>
   );
