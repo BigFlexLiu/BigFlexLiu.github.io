@@ -46,7 +46,7 @@ const Experience = () => {
       "Apri 2022",
       "Software Engineer",
       "Uncaught Exception Inc",
-      "Build a no-code platform as a Figma plugin",
+      "Build a figma plugin to convert a design document into flutter code",
       [
         "Implemented a data structure to enhance the flexibility and efficiency of code generation",
         "Applied separation of concerns to create clean, clear code design",
@@ -59,7 +59,7 @@ const Experience = () => {
       "Dec 2022",
       "Full-Stack Developer",
       "University of Waterloo",
-      "Complete all major features of GoFigure, a source management site",
+      "Redesign GoFigure, a source management website and manage database consistency.",
       [
         "Redesigned barebone webpage to be informative and intuitive",
         "Set up Container to pull citation data of websites, books, articles, etc",
