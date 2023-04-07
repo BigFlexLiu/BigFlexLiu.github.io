@@ -59,14 +59,14 @@ const Experience = () => {
       "Dec 2022",
       "Full-Stack Developer",
       "University of Waterloo",
-      "Redesign GoFigure, a source management website and manage database consistency.",
+      "Redesigned GoFigure, a source management website and managed database consistency.",
       [
         "Redesigned barebone webpage to be informative and intuitive",
         "Set up Container to pull citation data of websites, books, articles, etc",
         "Created endpoints to auto-complete citations for the users",
         "Synced data to Zotero, minimizing api calls and hasten data retrieval",
       ],
-      "Completely redesigned the external facing webpages to be informative, aesthetic, and responsive. Opened up new endpoints for saving and updating information in the database. Synchronized local database to zotero database."
+      "Completely redesigned the external facing webpages to be informative, aesthetic, and responsive. Opened up new endpoints for saving and updating information in the database. Synchronized local database to zotero database and used caching to minimize loading time."
     ),
   ];
   return (

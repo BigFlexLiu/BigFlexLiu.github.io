@@ -24,9 +24,9 @@ const Projects = () => {
         <div style={{ width: "10%" }}></div>
         <div style={{ width: "45%" }}>
           <img
-            src={require("../../assets/wordle_with_friends/game.jpg")}
-            alt="A Wordle game"
-            style={{ maxWidth: "50%", objectFit: "contain", float: "right" }}
+            src={require("../../assets/asmr_remixer.jpg")}
+            alt="A sound remixing app"
+            style={{ maxWidth: "40%", objectFit: "contain", float: "right" }}
           ></img>
           <div
             style={{
@@ -38,7 +38,7 @@ const Projects = () => {
         </div>
       </div>
       <div style={{display: "flex"}}>
-        <Button
+      <Button
           href="https://github.com/BigFlexLiu/ripplejs"
           variant="outlined"
           target="_blank"
@@ -49,6 +49,23 @@ const Projects = () => {
         >
           <Typography style={{ bottom: "0", fontSize: "1.5em" }}>
             Source&nbsp; <AiFillGithub style={{ verticalAlign: "text-top" }} />
+          </Typography>
+        </Button>
+        <Button
+          href="https://brave-sand-0a701a510.3.azurestaticapps.net"
+          variant="outlined"
+          target="_blank"
+          style={{
+            color: "white",
+            margin: "2em",
+          }}
+        >
+          <Typography style={{ bottom: "0", fontSize: "1.5em" }}>
+            View demo&nbsp; <img
+            src={require("../../assets/ripple.ico")}
+            alt="A sound remixing app"
+            style={{ maxWidth: "1em", objectFit: "contain", verticalAlign: "text-top" }}
+          ></img>
           </Typography>
         </Button>
         <div style={{flexGrow: 1}}></div>
@@ -62,7 +79,7 @@ const Projects = () => {
           }}
         >
           <Typography style={{ bottom: "0", fontSize: "1.5em" }}>
-            Visit Google Play&nbsp;{" "}
+            View on Google Play&nbsp;{" "}
             <FaGooglePlay style={{ verticalAlign: "text-top" }} />
           </Typography>
         </Button>

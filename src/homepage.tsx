@@ -42,7 +42,7 @@ const Homepage = () => {
         }}
       >
         <Button
-          href="FelixLiuResume.pdf"
+          href="Resume_waterloo_2 (2)-min.pdf"
           target="_blank"
           style={{
             color: "white",
