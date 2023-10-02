@@ -6,6 +6,7 @@ import AboutMe from "./components/pages/about_me";
 import Experience from "./components/pages/experience";
 import Projects from "./components/pages/projects";
 import "./App.css";
+import { FaGithub } from 'react-icons/fa';
 
 
 const Homepage = () => {
@@ -28,12 +29,29 @@ const Homepage = () => {
       <FontAwesomeIcon icon={faArrowDown} />
     </Typography>
   </Button>
+  const github = 
+  <Button
+    href="https://github.com/BigFlexLiu"
+    target="_blank"
+    style={{
+      color: "white",
+      backgroundColor: "#cc5500",
+      padding: "1em",
+
+      maxHeight: "3em",
+    }}
+  >
+    <Typography>
+      Github &nbsp;&nbsp;&nbsp;
+      <FaGithub />
+    </Typography>
+  </Button>
 
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
       <div
         className="header"
-        style={{ display: "flex", marginLeft: "20vw", padding: "1em", justifyContent: "space-between" }}
+        style={{ display: "flex", padding: "1em", justifyContent: "space-between" }}
       >
         <Typography>
           {email}&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,6 +59,8 @@ const Homepage = () => {
         </Typography>
 
         {resume}
+
+        {github}
       </div>
       <HorizontalCarousel titles={["About me", "Experiences", "Projects"]}>
         <AboutMe></AboutMe>
