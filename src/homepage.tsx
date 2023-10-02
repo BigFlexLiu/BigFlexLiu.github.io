@@ -11,17 +11,36 @@ import "./App.css";
 const Homepage = () => {
   const email = "Felixliu135@gmail.com";
   const phoneNumber = "+1 (905) 805-5437";
+  const resume = 
+  <Button
+    href="resume.pdf"
+    target="_blank"
+    style={{
+      color: "white",
+      backgroundColor: "#cc5500",
+      padding: "1em",
+
+      maxHeight: "3em",
+    }}
+  >
+    <Typography>
+      View Resume &nbsp;&nbsp;&nbsp;
+      <FontAwesomeIcon icon={faArrowDown} />
+    </Typography>
+  </Button>
 
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
       <div
         className="header"
-        style={{ display: "flex", marginLeft: "20vw", padding: "1em" }}
+        style={{ display: "flex", marginLeft: "20vw", padding: "1em", justifyContent: "space-between" }}
       >
         <Typography>
           {email}&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
           {phoneNumber}
         </Typography>
+
+        {resume}
       </div>
       <HorizontalCarousel titles={["About me", "Experiences", "Projects"]}>
         <AboutMe></AboutMe>
@@ -41,22 +60,6 @@ const Homepage = () => {
           marginBottom: "2em",
         }}
       >
-        <Button
-          href="Resume_waterloo_2 (2)-min.pdf"
-          target="_blank"
-          style={{
-            color: "white",
-            backgroundColor: "#cc5500",
-            padding: "1em",
-
-            maxHeight: "3em",
-          }}
-        >
-          <Typography>
-            View Resume &nbsp;&nbsp;&nbsp;
-            <FontAwesomeIcon icon={faArrowDown} />
-          </Typography>
-        </Button>
       </div>
     </div>
   );

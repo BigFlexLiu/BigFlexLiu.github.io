@@ -29,7 +29,7 @@ function HorizontalCarousel({
 
   return (
     <Carousel>
-      <div style={{ display: "flex", flexDirection: "column", maxHeight: "100%" }}>
+      <div style={{ display: "flex", flexDirection: "column", maxHeight: "100%", minWidth: "100%" }}>
         <div
           className="top-bar"
           style={{ display: "flex", justifyContent: "space-between" }}
@@ -38,9 +38,9 @@ function HorizontalCarousel({
           <p style={titleStyle}>{titles && titles[currentIndex]}</p>
           </div>
           <div style={{flexGrow: 1, justifyContent: "right", display: "flex"}}>
-            <p className="unselectable" style={titleStyle} onClick={() => setCurrentIndex((currentIndex - 1 + children.length) % children.length)}>{"<--"}</p>
+            <p className="unselectable" style={{cursor: "pointer", fontSize: "2em"}} onClick={() => setCurrentIndex((currentIndex - 1 + children.length) % children.length)}>{"<--"}</p>
             <p className="unselectable" style={{fontSize: "2em", width: "4em", textAlign: "center"}} onClick={() => console.log("hello")}>{currentIndex + 1}/{children.length}</p>
-            <p className="unselectable" style={titleStyle} onClick={() => setCurrentIndex((currentIndex + 1) % children.length)}>{"-->"}</p>
+            <p className="unselectable" style={{cursor: "pointer", fontSize: "2em"}} onClick={() => setCurrentIndex((currentIndex + 1) % children.length)}>{"-->"}</p>
           </div>
         </div>
         {children.map((child, index) => (

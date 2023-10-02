@@ -11,8 +11,16 @@ const AboutMe = () => {
   I hope that this webpage gives you a better understanding of who I am, and what I have to offer. Thank you for taking the time to visit, and I look forward to connecting with you soon!
   `;
 
+  const description2 = `This... is a goose, a very fat goose. It just so happens that he knows English, Manderin and Python 🐍.
+    Mr. Goose is full of fight, but also full of love. He learned Python because he saw all as friends.
+    Now pythons and geese have an aliance against the humans.
+    Mr. Goose is based in waterloo and is also incredibly based.
+    Mr. Goose is socialable: able to make friends with pythons, curious: willing to learn the language of his predator, and responsible: always contributing to his community.
+    Mr. Goose is looking for a job, would you kindly offer one.
+  `
+
   return (
-    <div className="page">
+    <div className="page" style={{minWidth: "100%"}}>
       <figure style={{float: "right"}}>
         <img src={require("../../assets/fat_goose.jpeg")} alt="Seagul" style={{maxWidth: "30vw"}}></img>
         <figcaption style={{ color: "white" }}>
@@ -24,9 +32,10 @@ const AboutMe = () => {
           whiteSpace: "pre-wrap",
           textAlign: "left",
           wordWrap: "break-word",
+          fontSize: "1.5em",
         }}
       >
-        {description}
+        {description2}
       </Typography>
     </div>
   );

@@ -8,6 +8,7 @@ const Projects = () => {
   `;
   const wordleWithFriendsDescription = `Wordle With Friends is a simple wordle game built with react. In addition to generating random five-letter words for the player to guess. There is also options for the number of guesses allowed and even allows user to generate a wordle game with the name of their choosing. Send it to a friend, share the joy.`;
   const asmrRemixerDescription = `ASMR Remixer is an app built using Flutter/Dart. It contains a few dozen of sounds which can be used to construct remixes. Remixes play sounds in random order. The overlay mode even plays sounds at random interval following exponential distribution. There are also light and dark mode to maximize visual comfort of the users.`;
+  const connectFiveDescription = `Connect 5 is a single player game where orbs are generated on a 2D board. The player must rearrange the orbs to form a group of five or more to remove them from the board. The game ends when the board is completely filled.`;
 
   return (
     <div className="page" style={{ display: "flex", flexDirection: "column" }}>

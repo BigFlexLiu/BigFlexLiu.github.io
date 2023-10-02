@@ -30,29 +30,16 @@ const Experience = () => {
   const rows = [
     createRow(
       "Sep 2021",
-      "Dec 2022",
-      "Software Engineer",
-      "Uncaught Exception Inc",
-      "Build a construction calculator",
-      [
-        "Applied 3D geometry to accurately display rafters in 3D view",
-        "Constructed neat simple diagrams of triangles, circles, and rafters",
-        "Calculated angles and lengths of parameters of models for the user",
-      ],
-      "Used Flutter/Dart to create precise diagrams to help users visualize the dimensions of the materials."
-    ),
-    createRow(
-      "Jan 2022",
-      "Apri 2022",
+      "Apr 2022",
       "Software Engineer",
       "Uncaught Exception Inc",
       "Build a figma plugin to convert a design document into flutter code",
       [
-        "Implemented a data structure to enhance the flexibility and efficiency of code generation",
-        "Applied separation of concerns to create clean, clear code design",
-        "Rated by the employer as the most productive member in the team",
+        "Sped up code generation algorithm from quadratic to linear time",
+        "Created clean intuitive plugin interface",
+        "Reorganized thousands lines of code using OOP principles",
       ],
-      "Designed a data structure to efficiently store and manipulate the content of the code generation. Using React/Typescript to design an elegant and intuitive user interface."
+      "Used Flutter/Dart to create precise diagrams to help users visualize the dimensions of the materials."
     ),
     createRow(
       "Sep 2022",
@@ -61,17 +48,29 @@ const Experience = () => {
       "University of Waterloo",
       "Redesigned GoFigure, a source management website and managed database consistency.",
       [
-        "Redesigned barebone webpage to be informative and intuitive",
-        "Set up Container to pull citation data of websites, books, articles, etc",
-        "Created endpoints to auto-complete citations for the users",
-        "Synced data to Zotero, minimizing api calls and hasten data retrieval",
+        "Employ caching and pagination techniques to reduce run time by a factor of 16",
+        "Synchronized database with zotero to eliminate collision problems",
+        "Automated citation generation to speed up citation process by 5 times",
       ],
       "Completely redesigned the external facing webpages to be informative, aesthetic, and responsive. Opened up new endpoints for saving and updating information in the database. Synchronized local database to zotero database and used caching to minimize loading time."
+    ),
+    createRow(
+      "Apr 2023",
+      "Aug 2023",
+      "Software Engineer",
+      "Spurry Inc",
+      "Build a figma plugin to convert a design document into flutter code",
+      [
+        "Synced user subscription with Stripe to automate payment process",
+        "Automated deployment using Github Actions",
+        "Integrated VertexAI into API to handle user inquiries",
+      ],
+      "Used Flutter/Dart to create precise diagrams to help users visualize the dimensions of the materials."
     ),
   ];
   return (
     <div className="page">
-      <table style={{borderSpacing: "1em"}}>
+      <table style={{overflow: "hidden"}}>
         <tbody>
           {rows.map((row) => (
             <tr>
@@ -84,7 +83,12 @@ const Experience = () => {
               </td>
               <td>
                 <p style={{fontWeight: "bold", fontSize: "1.5em"}}>{row.goal}</p>
-                <p>{row.highlight}</p>
+                {/* <p>{row.highlight}</p> */}
+                {row.accomplishment.map((value) => (
+                  <p style={{ color: "white" }}>
+                    <Typography>{value}</Typography>
+                  </p>
+                ))}
               </td>
             </tr>
           ))}
