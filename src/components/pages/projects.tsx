@@ -25,8 +25,8 @@ const Projects = () => {
         <div style={{ width: "10%" }}></div>
         <div style={{ width: "45%" }}>
           <img
-            src={require("../../assets/asmr_remixer.jpg")}
-            alt="A sound remixing app"
+            src={require("../../assets/connect_five.png")}
+            alt="A single player board game."
             style={{ maxWidth: "40%", objectFit: "contain", float: "right" }}
           ></img>
           <div
@@ -34,7 +34,7 @@ const Projects = () => {
               marginLeft: "1em",
             }}
           >
-            <p>{wordleWithFriendsDescription}</p>
+            <p>{connectFiveDescription}</p>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ const Projects = () => {
         </Button>
         <div style={{flexGrow: 1}}></div>
         <Button
-          href="https://play.google.com/store/apps/details?id=com.cfast.asmrremixer.app&hl=en-US&ah=o4bJdzUYyMdth2WBmC6uwiV4oKc"
+          href="https://play.google.com/store/apps/details?id=apps.cfast.connect_five&hl=en-US"
           variant="outlined"
           target="_blank"
           style={{
@@ -85,7 +85,7 @@ const Projects = () => {
           </Typography>
         </Button>
         <Button
-          href="https://github.com/BigFlexLiu/ASMR-remixer"
+          href="https://github.com/BigFlexLiu/connect-five"
           variant="outlined"
           target="_blank"
           style={{

@@ -22,8 +22,8 @@ const AboutMe = () => {
   return (
     <div className="page" style={{minWidth: "100%"}}>
       <figure style={{float: "right"}}>
-        <img src={require("../../assets/fat_goose.jpeg")} alt="Seagul" style={{maxWidth: "30vw"}}></img>
-        <figcaption style={{ color: "white" }}>
+        <img src={require("../../assets/fat_goose.jpeg")} alt="Seagul" style={{maxWidth: "30vw", minWidth: "30vw"}}></img>
+        <figcaption style={{ color: "white", fontSize: "1.5em" }}>
           A biblically accurate image of Felix Liu
         </figcaption>
       </figure>
@@ -32,7 +32,7 @@ const AboutMe = () => {
           whiteSpace: "pre-wrap",
           textAlign: "left",
           wordWrap: "break-word",
-          fontSize: "1.5em",
+          fontSize: "2em",
         }}
       >
         {description2}
