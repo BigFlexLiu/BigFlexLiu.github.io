@@ -33,7 +33,7 @@ const Experience = () => {
       "Apr 2022",
       "Software Engineer",
       "Uncaught Exception Inc",
-      "Build a figma plugin to convert a design document into flutter code",
+      "Built a figma plugin to convert design into code",
       [
         "Sped up code generation algorithm from quadratic to linear time",
         "Created clean intuitive plugin interface",
@@ -46,7 +46,7 @@ const Experience = () => {
       "Dec 2022",
       "Full-Stack Developer",
       "University of Waterloo",
-      "Redesigned GoFigure, a source management website and managed database consistency.",
+      "Redesign and optimize the citation manager website",
       [
         "Employ caching and pagination techniques to reduce run time by a factor of 16",
         "Synchronized database with zotero to eliminate collision problems",
@@ -59,7 +59,7 @@ const Experience = () => {
       "Aug 2023",
       "Software Engineer",
       "Spurry Inc",
-      "Build a figma plugin to convert a design document into flutter code",
+      "Prepare and deploy a mobile app for a startup company",
       [
         "Synced user subscription with Stripe to automate payment process",
         "Automated deployment using Github Actions",
@@ -70,11 +70,14 @@ const Experience = () => {
   ];
   return (
     <div className="page">
+      <div >
+        <h1># Experience</h1></div>
+        <div style={{display: "flex", justifyContent: "center"}}>
       <table style={{overflow: "hidden"}}>
         <tbody>
           {rows.map((row) => (
             <tr>
-              <td style={{width: "10%"}}>
+              <td style={{width: "20%"}}>
                 <p style={{fontWeight: "bold", fontSize: "1.2em"}}>{row.startDate} - {row.endDate}</p>
               </td>
               <td style={{width: "20%"}}>
@@ -82,55 +85,18 @@ const Experience = () => {
                 <p style={{fontWeight: "bold", fontSize: "1.2em"}}>{row.organization}</p>
               </td>
               <td>
-                <p style={{fontWeight: "bold", fontSize: "1.5em"}}>{row.goal}</p>
+                <p style={{fontWeight: "bold", fontSize: "2em"}}>{row.goal}</p>
                 {/* <p>{row.highlight}</p> */}
                 {row.accomplishment.map((value) => (
-                  <p style={{ color: "white" }}>
-                    <Typography>{value}</Typography>
+                  <p style={{ color: "white", fontSize: "1.5em" }}>{value}
+                    {/* <Typography >{value}</Typography> */}
                   </p>
                 ))}
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
-      {/* <Table>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow>
-              <TableCell>
-                <Typography style={{ fontWeight: "bold", fontSize: "1.2em" }}>
-                  {row.startDate} -
-                </Typography>
-                <Typography style={{ fontWeight: "bold", fontSize: "1.2em" }}>
-                  {row.endDate}
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography style={{ fontWeight: "bold", fontSize: "1.5em" }}>
-                  {row.position}
-                </Typography>
-                <Typography style={{ fontWeight: "bold", fontSize: "1.5em" }}>
-                  {row.organization}
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography style={{ fontWeight: "bold", fontSize: "1.2em" }}>
-                  {row.goal}
-                </Typography>
-                <p>{row.highlight}</p>
-                <ul>
-                  {row.accomplishment.map((value) => (
-                    <li style={{ color: "white" }}>
-                      <Typography>{value}</Typography>
-                    </li>
-                  ))}
-                </ul>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table> */}
+      </table></div>
     </div>
   );
 };

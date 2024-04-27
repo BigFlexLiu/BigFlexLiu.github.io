@@ -62,11 +62,9 @@ const Homepage = () => {
 
         {github}
       </div>
-      <HorizontalCarousel titles={["About me", "Experiences", "Projects"]}>
         <AboutMe></AboutMe>
         <Experience></Experience>
         <Projects></Projects>
-      </HorizontalCarousel>
       <div
         className="Bottom-bar"
         style={{
