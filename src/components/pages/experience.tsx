@@ -72,14 +72,14 @@ const Experience = () => {
     <div>
       <h1># Experience</h1>
       <div style={{ display: "flex" }}>
-        <table style={{ overflow: "hidden" }}>
+        <table style={{ overflow: "hidden", width: "100%" }}>
           <tbody>
             {rows.map((row) => (
               <tr>
                 <td style={{ width: "30%", verticalAlign: "top" }}>
                   <p style={{ fontWeight: "bold", fontSize: "1.5em" }}>{row.position}</p>
-                  <p style={{ fontWeight: "bold", fontSize: "1.2em" }}>{row.organization}</p>
-                  <p style={{ fontWeight: "bold", fontSize: "1.2em" }}>{row.startDate} - {row.endDate}</p>
+                  <i><p style={{ fontWeight: "bold", fontSize: "1.2em" }}>{row.organization}</p></i>
+                  <i><p style={{ fontSize: "1.2em" }}>{row.startDate} - {row.endDate}</p></i>
                 </td>
                 <td style={{ width: "70%" }}>
                   <p style={{ fontWeight: "bold", fontSize: "1.5em" }}>{row.goal}</p>

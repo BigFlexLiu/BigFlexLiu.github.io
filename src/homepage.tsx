@@ -63,7 +63,11 @@ const Homepage = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
         <div style={{ display: "flex", }}>
+          <div style={{ width: "70%"}}
+          >
           <Experience></Experience>
+
+          </div>
           <aside style={{ maxWidth: "30%" }}>
             <AboutMe></AboutMe>
           </aside>

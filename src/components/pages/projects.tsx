@@ -10,20 +10,24 @@ const projects_info = [
     "link": "https://github.com/BigFlexLiu/RippleJs",
   },
   {
+    "name": "Attention",
+    "description": "An advanced todo list app that is designed to help user overcome common productivity problems.",
+    "demos": [
+      require("../../assets/attention/main_screen.png"), require("../../assets/attention/notes_screen.png"),
+      require("../../assets/attention/task_screen.png"), require("../../assets/attention/task.png"),
+      require("../../assets/attention/notes_screen_expanded.png"), require("../../assets/attention/break.png"),
+    ],
+    "link": "https://github.com/BigFlexLiu/attention"
+  },
+  {
     "name": "Wordle With Friends",
     "description": "Wordle but you can also choose the word and generate a link for it.",
     "demos": [require("../../assets/wordle_with_friends/empty.jpg"), require("../../assets/wordle_with_friends/game.jpg"), require("../../assets/wordle_with_friends/generate.jpg"), require("../../assets/wordle_with_friends/make.jpg"), require("../../assets/wordle_with_friends/new_game.jpg")],
     "link": "https://github.com/BigFlexLiu/wordle_with_friends",
-  }
+  },
 ];
 
 const Projects = () => {
-  const rippleDescription = `
-  Ripple is a sandbox that emulates the rippling of droplets on the surface of water. The colors from droplets interact with each other to form fabulous images. With clever usage of the colors, block, and fade options, the possibility is limitless.
-  `;
-  const wordleWithFriendsDescription = `Wordle With Friends is a simple wordle game built with react. In addition to generating random five-letter words for the player to guess. There is also options for the number of guesses allowed and even allows user to generate a wordle game with the name of their choosing. Send it to a friend, share the joy.`;
-  const asmrRemixerDescription = `ASMR Remixer is an app built using Flutter/Dart. It contains a few dozen of sounds which can be used to construct remixes. Remixes play sounds in random order. The overlay mode even plays sounds at random interval following exponential distribution. There are also light and dark mode to maximize visual comfort of the users.`;
-  const connectFiveDescription = `Connect 5 is a single player game where orbs are generated on a 2D board. The player must rearrange the orbs to form a group of five or more to remove them from the board. The game ends when the board is completely filled.`;
   const [selectedTab, setSelectedTab] = useState(0);
 
   const handleTabClick = (project: number) => {
@@ -44,7 +48,7 @@ const Projects = () => {
           {
             (typeof project["demos"] === 'object') &&
             <div>
-              <Gallery children={(projects_info[1]["demos"] as string[]).map((x) => <img style={{ maxHeight: "50vh" }} src={x} />)}></Gallery>
+              <Gallery children={(projects_info[selectedTab]["demos"] as string[]).map((x) => <img style={{ maxHeight: "50vh" }} src={x} />)}></Gallery>
             </div>
           }
         </div>)}
@@ -64,8 +68,8 @@ const Projects = () => {
                 <div>
                   <p style={{ fontSize: "0.7em", color: "black" }}>{project["description"]}</p>
                   <button onClick={() => window.open(project["link"], "_blank")} style={{ fontSize: "0.7em", color: "orange", background: "black", padding: "0.5em" }} >
-                    <FaGithub style={{ marginRight: "0.5em" }}/>
-                    Github 
+                    <FaGithub style={{ marginRight: "0.5em" }} />
+                    Github
                   </button>
                 </div>
               }
