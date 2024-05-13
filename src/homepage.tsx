@@ -1,7 +1,6 @@
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Typography, Button } from "@mui/material";
-import HorizontalCarousel from "./components/horizontal_carousel";
 import AboutMe from "./components/pages/about_me";
 import Experience from "./components/pages/experience";
 import Projects from "./components/pages/projects";
@@ -12,40 +11,40 @@ import { FaGithub } from 'react-icons/fa';
 const Homepage = () => {
   const email = "Felixliu135@gmail.com";
   const phoneNumber = "+1 (905) 805-5437";
-  const resume = 
-  <Button
-    href="resume.pdf"
-    target="_blank"
-    style={{
-      color: "white",
-      backgroundColor: "#cc5500",
-      padding: "1em",
+  const resume =
+    <Button
+      href="resume.pdf"
+      target="_blank"
+      style={{
+        color: "white",
+        backgroundColor: "#cc5500",
+        padding: "1em",
 
-      maxHeight: "3em",
-    }}
-  >
-    <Typography>
-      View Resume &nbsp;&nbsp;&nbsp;
-      <FontAwesomeIcon icon={faArrowDown} />
-    </Typography>
-  </Button>
-  const github = 
-  <Button
-    href="https://github.com/BigFlexLiu"
-    target="_blank"
-    style={{
-      color: "white",
-      backgroundColor: "#cc5500",
-      padding: "1em",
+        maxHeight: "3em",
+      }}
+    >
+      <Typography>
+        View Resume &nbsp;&nbsp;&nbsp;
+        <FontAwesomeIcon icon={faArrowDown} />
+      </Typography>
+    </Button>
+  const github =
+    <Button
+      href="https://github.com/BigFlexLiu"
+      target="_blank"
+      style={{
+        color: "white",
+        backgroundColor: "#cc5500",
+        padding: "1em",
 
-      maxHeight: "3em",
-    }}
-  >
-    <Typography>
-      Github &nbsp;&nbsp;&nbsp;
-      <FaGithub />
-    </Typography>
-  </Button>
+        maxHeight: "3em",
+      }}
+    >
+      <Typography>
+        Github &nbsp;&nbsp;&nbsp;
+        <FaGithub />
+      </Typography>
+    </Button>
 
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
@@ -62,9 +61,15 @@ const Homepage = () => {
 
         {github}
       </div>
-        <AboutMe></AboutMe>
-        <Experience></Experience>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+        <div style={{ display: "flex", }}>
+          <Experience></Experience>
+          <aside style={{ maxWidth: "30%" }}>
+            <AboutMe></AboutMe>
+          </aside>
+        </div>
         <Projects></Projects>
+      </div>
       <div
         className="Bottom-bar"
         style={{

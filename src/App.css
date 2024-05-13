@@ -1,11 +1,8 @@
 html,
 body {
   height: 100%;
+  margin: 0 5%;
   background-color: #000000;
-}
-
-.App > *{
-  margin: 0 10vw;
 }
 
 h1 {
@@ -22,49 +19,4 @@ p {
   color: white;
   text-align: left;
   font-size: 2em;
-}
-
-/* Typography */
-.MuiTypography-body1 {
-  color: white;
-}
-
-.header-content {
-  padding: 1vw;
-}
-
-.Main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.Horizontal-scroll-content {
-  width: 80vw;
-  /* height: 100vh; */
-}
-
-/* Expand main content to fill the page */
-.Horizontal-scroll {
-  display: flex;
-  min-height: 100;
-}
-
-.react-horizontal-scrolling-menu--wrapper, .react-horizontal-scrolling-menu--inner-wrapper, .react-horizontal-scrolling-menu--scroll-container, .react-horizontal-scrolling-menu--item, .Horizontal-scroll-content {
-  flex-grow: 1;
-  display: flex;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-  height: auto;
-}
-
-/* Hide bottom scroll bar */
-.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
