@@ -13,7 +13,7 @@ const Homepage = () => {
   const phoneNumber = "+1 (905) 805-5437";
   const resume =
     <Button
-      href="resume.pdf"
+      href="felix_liu.pdf"
       target="_blank"
       style={{
         color: "white",
