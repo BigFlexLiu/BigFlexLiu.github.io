@@ -1,0 +1,234 @@
+.timeline-container {
+  height: 100%;  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.timeline-container h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Each timeline card */
+.timeline-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border-left: 4px solid var(--primary-color);
+  position: relative;
+  animation: sway 5s infinite ease-in-out;
+}
+
+.timeline-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  animation: none;
+}
+.timeline-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.timeline-year {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.timeline-title {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  font-weight: 500;
+  color: #2D3748;
+}
+
+.toggle-button {
+  background: none;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.3s ease; ;
+  transform: rotate(90deg);
+}
+
+.toggle-button:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.toggle-button.expanded {
+  transform: rotate(180deg);
+}
+
+.timeline-details {
+  padding: 0rem 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid #E2E8F0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.timeline-details p {
+  margin: 0.4rem 0;
+}
+
+.tech-stack {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.source {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2C5282;
+  font-style: italic;
+  float: right; /* Floats the text to the right */
+  display: inline; /* Ensures the text remains inline */
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.source::before {
+  content: '«';
+}
+.source::after {
+  content: '»';
+}
+
+/* Subtle emphasis for the note from supervisor */
+.note-from-supervisor {
+  font-weight: 600;
+  color: #2C5282; 
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clouds */
+.cloud-container {
+  position: absolute;
+  background: linear-gradient(180deg, #0830be 60%, #E9EBEC);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cloud {
+  position: absolute;
+  background: #fff;
+  background: linear-gradient(to bottom, #fff 5%, #f1f1f1 100%);
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(1px);
+  /* Initial off-screen position */
+  transform: translateX(-200px);
+  animation: moveClouds 30s linear;
+  transform-origin: left center;
+}
+
+/* Different cloud shapes using multiple divs */
+.cloud:before,
+.cloud:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 60%;
+  height: 60%;
+  top: -25%;
+  left: 10%;
+  border-radius: 50%;
+}
+
+.cloud:after {
+  width: 50%;
+  height: 50%;
+  top: 10%;
+  left: 60%;
+}
+
+@keyframes moveClouds {
+  from {
+    transform: translateX(-200px); /* Start off-screen to the left */
+  }
+  to {
+    transform: translateX(calc(100vw + 200px)); /* Move completely off-screen to the right */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloud {
+    width: 100px;
+    height: 60px;
+    animation: moveClouds 30s linear; /* Adjust animation if needed */
+  }
+}
+
+@media (min-width: 769px) {
+  .cloud {
+    width: 200px;
+    height: 120px;
+    animation: moveClouds 30s linear;
+  }
+}
+
+/* Swaying animation */
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.timeline-item:nth-child(odd) {
+  animation-duration: 6s;
+}
+
+.timeline-item:nth-child(even) {
+  animation-duration: 4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud, .timeline-item, .tree {
+    animation: none;
+  }
+}
