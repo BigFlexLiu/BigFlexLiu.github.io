@@ -1,28 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.61620ba4.css",
-    "main.js": "/static/js/main.8fcbaf4a.js",
+    "main.css": "/static/css/main.d484599c.css",
+    "main.js": "/static/js/main.b24a11d3.js",
     "static/js/787.c0841a6b.chunk.js": "/static/js/787.c0841a6b.chunk.js",
-    "static/media/ripple_demo.gif": "/static/media/ripple_demo.1f00ecc6e51f50efb77f.gif",
-    "static/media/break.png": "/static/media/break.bab64a1838a302ec0f57.png",
-    "static/media/main_screen.png": "/static/media/main_screen.6e187fee91444a795843.png",
-    "static/media/new_game.jpg": "/static/media/new_game.4f460e790e3d134113f9.jpg",
-    "static/media/game.jpg": "/static/media/game.62efaf3873eacd99c612.jpg",
-    "static/media/generate.jpg": "/static/media/generate.cc30fa6020d651a16c07.jpg",
-    "static/media/empty.jpg": "/static/media/empty.92b6dc5b52a83b169d87.jpg",
-    "static/media/make.jpg": "/static/media/make.5bb92f6443bfa7e29a58.jpg",
-    "static/media/notes_screen_expanded.png": "/static/media/notes_screen_expanded.400e1a84f1bc76f6b686.png",
-    "static/media/task.png": "/static/media/task.c9c31be1e9e2d743a11d.png",
-    "static/media/task_screen.png": "/static/media/task_screen.f40a76ba6d1184f0490d.png",
-    "static/media/notes_screen.png": "/static/media/notes_screen.7b4e384ffe0e8e212a59.png",
-    "static/media/fat_goose.jpeg": "/static/media/fat_goose.d89d80b75b017bb4c800.jpeg",
     "index.html": "/index.html",
-    "main.61620ba4.css.map": "/static/css/main.61620ba4.css.map",
-    "main.8fcbaf4a.js.map": "/static/js/main.8fcbaf4a.js.map",
+    "main.d484599c.css.map": "/static/css/main.d484599c.css.map",
+    "main.b24a11d3.js.map": "/static/js/main.b24a11d3.js.map",
     "787.c0841a6b.chunk.js.map": "/static/js/787.c0841a6b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61620ba4.css",
-    "static/js/main.8fcbaf4a.js"
+    "static/css/main.d484599c.css",
+    "static/js/main.b24a11d3.js"
   ]
 }
