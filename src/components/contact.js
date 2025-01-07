@@ -43,7 +43,7 @@ const Contact = () => {
         <li>LinkedIn: linkedin.com/in/felixliu135</li>
         <li>GitHub: github.com/BigFlexLiu</li>
       </ul>
-      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="Felix-Liu.pdf" target="_blank" rel="noopener noreferrer">
         <button className="resume-button">Resume</button>
       </a>
 
