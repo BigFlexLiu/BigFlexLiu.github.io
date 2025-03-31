@@ -66,12 +66,13 @@ const Timeline = () => {
       <div className="timeline-items">
         {experiences.map((exp, index) => {
           const isExpanded = expandedIndex === index;
-          const showCard = !isSmallScreen || expandedIndex == null || isExpanded;
+          const showCard = expandedIndex == null || isExpanded;
+          const isVisible = !isExpanded && expandedIndex
 
           return (
-            <div key={index} className="timeline-item">
+            <div key={index} className={`timeline-item ${showCard ? 'active' : 'hidden'}`}>
               {showCard &&
-                <div className="timeline-header" onClick={() => handleToggle(index)}>
+                <div className={`timeline-header ${isExpanded ? 'expanded' : 'collapsed'}`}  onClick={() => handleToggle(index)}>
                   <span className="timeline-year">{exp.year}</span>
                   <h3 className="timeline-title">{exp.title}</h3>
                   <button className={`toggle-button ${isExpanded ? 'expanded' : ''}`}>
@@ -88,7 +89,7 @@ const Timeline = () => {
                   })}
                   <p className="note-from-supervisor">Note from Supervisor: </p>
                   <br></br>
-                  <span>{exp.testimony}</span>
+                  <span className="testimony">{exp.testimony}</span>
                   <a href={exp.source} target="_blank" rel="noopener noreferrer">
                     <p className="source">Source</p></a>
                 </div>
