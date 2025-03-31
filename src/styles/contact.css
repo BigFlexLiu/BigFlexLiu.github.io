@@ -63,8 +63,8 @@
   position: absolute;
   bottom: 0;
   left: 0; /* Will be overridden by inline style */
-  width: 36em;
-  height: 36em;
+  width: 24em;
+  height: 24em;
   background-color: #0400ff;
   transform: translateX(-50%); /* Center the waves */ 
   border-radius: 50% 50% 0 0; /* Creates a semi-circle */
@@ -87,15 +87,15 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .wave {
-    width: 18em;
-    height: 18em;
+    width: 12em;
+    height: 12em;
   }
 }
 
 @media (max-width: 480px) {
   .wave {
-    width: 12em;
-    height: 12em;
+    width: 8em;
+    height: 8em;
   }
 }
 
