@@ -19,7 +19,7 @@ const experiences = [
     details: [
       "Implemented caching and pagination, boosting API response time by 60%",
       "Synchronized database, enabling seamless researcher collaboration",
-      "Implemented a research collaboration platform, cutting citation time by 80%"
+      "Implemented a research collaboration platform, cutting citation time by 75%"
     ],
     testimony: "Felix was very responsive to the challenges of the project and demonstrated both a high degree of technical proficiency and initiative.",
     source: "Felix Liu - Performance Evaluation-3.pdf"
@@ -42,8 +42,8 @@ const experiences = [
     title: "Android Developer @ Accedo",
     techStack: ["Kotlin"],
     details: [
-      "Rated as one of the top three most impactful new hires in the past three years",
-      "Resolved 10+ major-severity issues to deliver the launch candidate on schedule",
+      "Selected as one of the top three most impactful new hires of the year",
+      "Resolved 10+ critical issues, avoiding a 2-month delay for delivery to 500K+ users",
     ],
     testimony: "Despite being a co-op, Felix has joined Accedo with a tremendous amount of technical knowledge that he's showcased in a short period of time at Accedo. Whenever Felix is assigned a ticket, he completes it within minutes.",
     source: "Champion-award-nomination.PDF"
