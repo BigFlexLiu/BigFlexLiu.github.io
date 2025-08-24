@@ -81,7 +81,6 @@ const Intro = () => {
       {/* Main content */}
       <div className="intro-content">
         <h1>Hello, I’m Felix!</h1>
-        <p>I write code.</p>
       </div>
     </div>
   );

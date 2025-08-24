@@ -1,22 +1,21 @@
 import Intro from "./components/intro";
 import Timeline from "./components/timeline";
 import Contact from "./components/contact";
-
-import PageScroller from "./components/page-scroller";
+import "./App.css";
 
 function App() {
   return (
-    <PageScroller>
-      <section className="scroll-section" id="intro">
+    <div className="app-container">
+      <section className="section intro-section" id="intro">
         <Intro />
       </section>
-      <section className="scroll-section" id="timeline">
+      <section className="section timeline-section" id="timeline">
         <Timeline />
       </section>
-      <section className="scroll-section" id="contact">
+      <section className="section contact-section" id="contact">
         <Contact />
       </section>
-    </PageScroller>
+    </div>
   );
 }
 

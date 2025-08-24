@@ -5,98 +5,147 @@ const experiences = [
   {
     year: "2021 - 2022", title: "Flutter Developer @ Uncaught Exception",
     techStack: ["Flutter/Dart", "Javascript", "React"],
-    details: [
-      "Developed interactive diagrams in a construction calculator app.",
-      "Optimized code generation algorithm, cutting complexity from O(n²) to O(n).",
-      "Built a Figma plugin, providing a clean and intuitive interface for the users."],
-    testimony: "[Felix] delivered a set of features that originally had been planned to take two-three developers, all the while coordinating development with coworkers, making improvements with new innovative ways of doing things, and navigating shifting requirements.",
-    source: "Felix Liu - Performance Evaluation-1.pdf"
+    description: 
+      "Contributed to a Figma-to-Flutter code generation tool and a construction calculator app. I focused on speeding up dev workflows, automating boilerplate, and improving UI component performance.",
+      highlight: "Architected Figma API data processing logic, enabling 60% faster code generation.",
   },
   {
     year: "2022 Sep - Dec",
     title: "Full-Stack Develop @ University of Waterloo",
     techStack: ["TypeScript", "Go", "React", "SQLite", "Containers"],
-    details: [
-      "Implemented caching and pagination, boosting API response time by 60%",
-      "Synchronized database, enabling seamless researcher collaboration",
-      "Implemented a research collaboration platform, cutting citation time by 75%"
-    ],
-    testimony: "Felix was very responsive to the challenges of the project and demonstrated both a high degree of technical proficiency and initiative.",
-    source: "Felix Liu - Performance Evaluation-3.pdf"
+    description: "Led development of a collaborative research platform used by faculty and students. I introduced caching and pagination for handling large datasets, and built microservices to reduce duplicate work for researchers.",
+    highlight: "Launched an autofill microservice that cut researcher input time by 90%."
   },
   {
     year: "2023 Apr - Aug",
     title: "Software Engineer @ Spurry",
     techStack: ["Flutter/Dart", "Javascript", "React", "Node.js"],
-    details: [
-      "Integrated Stripe api, ensuring a smooth and secure payment experience",
-      "Implemented Continuous Integration, cutting down deployment overhead",
-      "Integrated a chatbot into website, enabling immediate customer support",
-      "Implemented hash-based deduplication to optimize data transfer efficiency"
-    ],
-    testimony: "[Felix] was a critical member of the team in getting the product to the quality that it currently is, and would be more than happy to have him return to the team if he chooses.",
-    source: "Felix Liu - Performance Evaluation-4.pdf"
+    description: 
+      "Helped build and scale an AI-powered resume tool from prototype to production. My work spanned backend performance tuning, onboarding flow improvements, and release automation.",
+      highlight: "Refined AI prompt handling and infrastructure, contributing to a 61% increase in paid conversion rate.",
   },
   {
     year: "2024 Sep - Dec",
     title: "Android Developer @ Accedo",
     techStack: ["Kotlin"],
-    details: [
-      "Selected as one of the top three most impactful new hires of the year",
-      "Resolved 10+ critical issues, avoiding a 2-month delay for delivery to 500K+ users",
-    ],
-    testimony: "Despite being a co-op, Felix has joined Accedo with a tremendous amount of technical knowledge that he's showcased in a short period of time at Accedo. Whenever Felix is assigned a ticket, he completes it within minutes.",
-    source: "Champion-award-nomination.PDF"
+    description: "Worked on Android features for large-scale streaming apps, focusing on stability and user experience. I refactored core codebases to simplify maintenance, solved UI inconsistencies across platforms, and ensured release deadlines were met for a large user base.",
+    highlight: "Built a URL fallback system that prevented a release delay for 500k+ users.",
   },
 ].reverse();
 
 const Timeline = () => {
-  const isSmallScreen = window.innerWidth < 900 || window.innerHeight < 600;
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [selectedExperience, setSelectedExperience] = useState(0); // Default to first experience
+  const timelineRef = useRef(null);
+  const timelineLineRef = useRef(null);
 
-  const handleToggle = (index) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+  const handleCardClick = (index) => {
+    setSelectedExperience(index);
   };
+
+  // Effect to calculate and set the timeline line height
+  useEffect(() => {
+    const updateTimelineHeight = () => {
+      if (timelineRef.current && timelineLineRef.current) {
+        const timelineItems = timelineRef.current.querySelectorAll('.timeline-item-compact');
+        if (timelineItems.length > 0) {
+          const lastItem = timelineItems[timelineItems.length - 1];
+          const lastItemRect = lastItem.getBoundingClientRect();
+          const timelineRect = timelineRef.current.getBoundingClientRect();
+          
+          // Calculate the height from the top of the timeline to the center of the last item
+          const lastItemCenter = lastItemRect.top - timelineRect.top + (lastItemRect.height / 2);
+          const adjustedHeight = lastItemCenter - 24; // 1.5rem (24px) offset from top
+          
+          timelineLineRef.current.style.height = `${adjustedHeight}px`;
+        }
+      }
+    };
+
+    // Update height after component mounts and when window resizes
+    updateTimelineHeight();
+    window.addEventListener('resize', updateTimelineHeight);
+    
+    // Small delay to ensure DOM is fully rendered
+    const timeoutId = setTimeout(updateTimelineHeight, 100);
+
+    return () => {
+      window.removeEventListener('resize', updateTimelineHeight);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <div className="timeline-container">
-      {/* <CloudAnimation /> */}
       <Cloud />
-      <h2>My Work</h2>
-      <div className="timeline-items">
-        {experiences.map((exp, index) => {
-          const isExpanded = expandedIndex === index;
-          const showCard = expandedIndex == null || isExpanded;
-          const isVisible = !isExpanded && expandedIndex
+      <h2>My Professional Journey</h2>
+      
+      <div className="timeline-layout">
+        <div className="timeline-sidebar">
+          <div ref={timelineLineRef} className="timeline-line-compact"></div>
+          <div ref={timelineRef} className="timeline-items-compact">
+            {experiences.map((exp, index) => {
+              const isSelected = selectedExperience === index;
 
-          return (
-            <div key={index} className={`timeline-item ${showCard ? 'active' : 'hidden'}`}>
-              {showCard &&
-                <div className={`timeline-header ${isExpanded ? 'expanded' : 'collapsed'}`}  onClick={() => handleToggle(index)}>
-                  <span className="timeline-year">{exp.year}</span>
-                  <h3 className="timeline-title">{exp.title}</h3>
-                  <button className={`toggle-button ${isExpanded ? 'expanded' : ''}`}>
-                    {"▲"}
-                  </button>
+              return (
+                <div 
+                  key={index} 
+                  className={`timeline-item-compact ${isSelected ? 'selected' : ''}`}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div className="timeline-dot-compact">
+                    <div className="timeline-year-compact">{exp.year.split(' - ')[0]}</div>
+                  </div>
+                  
+                  <div className="timeline-card-compact">
+                    <div className="timeline-period-compact">{exp.year}</div>
+                    <h4 className="timeline-title-compact">{exp.title}</h4>
+                    <div className="timeline-tech-compact">
+                      {exp.techStack.slice(0, 3).map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-badge-compact">{tech}</span>
+                      ))}
+                      {exp.techStack.length > 3 && <span className="tech-more-compact">+{exp.techStack.length - 3}</span>}
+                    </div>
+                  </div>
                 </div>
-              }
+              );
+            })}
+          </div>
+        </div>
 
-              {isExpanded && (
-                <div className="timeline-details">
-                  <h4 className="tech-stack">{exp.techStack.join(", ")}</h4>
-                  {exp.details.map((detail, index) => {
-                    return <p key={index}>- {detail}</p>
-                  })}
-                  <p className="note-from-supervisor">Note from Supervisor: </p>
-                  <br></br>
-                  <span className="testimony">{exp.testimony}</span>
-                  <a href={exp.source} target="_blank" rel="noopener noreferrer">
-                    <p className="source">Source</p></a>
+        <div className="timeline-details-panel">
+          {selectedExperience !== null && (
+            <div className="details-content">
+              <div className="details-header">
+                <div className="details-period">{experiences[selectedExperience].year}</div>
+                <h3 className="details-title">{experiences[selectedExperience].title}</h3>
+              </div>
+
+              <div className="details-body">
+                <div className="tech-stack-full">
+                  <span className="tech-label">Technologies & Tools</span>
+                  <div className="tech-tags-grid">
+                    {experiences[selectedExperience].techStack.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
                 </div>
-              )}
+                
+                <div className="description-section">
+                  <h4 className="section-title">Role & Responsibilities</h4>
+                  <p className="details-description">{experiences[selectedExperience].description}</p>
+                </div>
+                
+                <div className="highlight-section">
+                  <h4 className="section-title">Key Achievement</h4>
+                  <div className="details-highlight">
+                    <div className="highlight-icon">🏆</div>
+                    <p className="highlight-text">{experiences[selectedExperience].highlight}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          );
-        })}
+          )}
+        </div>
       </div>
     </div>
   );
